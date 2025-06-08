@@ -27,3 +27,13 @@ variable "repo_visibility" {
     error_message = "Repository visibility must be either 'public' or 'private'."
   }
 }
+
+variable "collaborators" {
+  description = "Map of GitHub usernames to their permission levels (pull, push, admin, maintain, triage)"
+  type        = map(string)
+  default     = {}
+  validation {
+    condition     = alltrue([for perm in values(var.collaborators) : contains(["pull", "push", "admin", "maintain", "triage"], perm)])
+    error_message = "Permission must be one of: pull, push, admin, maintain, triage"
+  }
+}
