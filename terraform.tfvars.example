@@ -3,3 +3,11 @@ github_token      = "your-github-token-here"
 repo_name         = "your-new-repo-name"
 repo_description  = "Description of your new repository"
 repo_visibility   = "private"  # or "public" 
+
+collaborators = {
+  "username1" = "admin"     # Full repository access
+  "username2" = "push"      # Can push to the repository
+  "username3" = "pull"      # Can only pull from the repository
+  "username4" = "maintain"  # Can manage issues and pull requests
+  "username5" = "triage"    # Can manage issues and pull requests but cannot push
+} 
