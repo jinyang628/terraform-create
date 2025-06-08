@@ -1,7 +1,7 @@
 resource "github_repository" "repo_to_create" {
-  name                        = var.repo_name
-  description                 = var.repo_description
-  visibility                  = var.repo_visibility
+  name        = var.repo_name
+  description = var.repo_description
+  visibility  = var.repo_visibility
   template {
     owner      = "jinyang628"
     repository = "fullstack-template"
